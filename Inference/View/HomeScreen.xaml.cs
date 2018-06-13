@@ -23,5 +23,20 @@ namespace Inference.View
         {
             InitializeComponent();
         }
+
+        private void exploreButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void accountsButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void createButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

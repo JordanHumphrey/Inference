@@ -31,3 +31,4 @@ C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Deb
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference.csproj.CopyComplete
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference.exe
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference.pdb
+C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference.csprojAssemblyReference.cache

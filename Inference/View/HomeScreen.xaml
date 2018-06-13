@@ -29,11 +29,14 @@
         </Grid.RowDefinitions>
 
         <Label x:Name="titleLabel" Content="Inference"
-               Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2"
-               HorizontalAlignment="Center" VerticalAlignment="Bottom"
+               Grid.Row="0"  Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
                Style="{StaticResource homeTitleTextStyle}"/>
 
-        <Grid Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2">
+        <TextBox x:Name="homescreenSearchBox" Text="Find a Project or Issue" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="4" Margin="40"
+                 TextAlignment="Left" FontStyle="Normal" FontWeight="Light" />
+
+        <Grid Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -42,7 +45,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="accountsButton" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Black"/>
+            <Button x:Name="accountsButton" Click="accountsButton_Click" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Black"/>
             <TextBlock Text="Accounts" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
                        FontWeight="DemiBold" Foreground="White"/>
             <TextBlock Text="Create, Edit or Remove Accounts" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top"
@@ -50,7 +53,7 @@
             <Image Source="{StaticResource AccountImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
         </Grid>
 
-        <Grid Grid.Column="5" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2">
+        <Grid Grid.Column="5" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -59,15 +62,29 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="exploreButton" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Black"/>
-            <TextBlock Text="Explore Database" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+            <Button x:Name="exploreButton" Click="exploreButton_Click" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Black"/>
+            <TextBlock Text="Explore" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
                        FontWeight="DemiBold" Foreground="White"/>
-            <TextBlock Text="Create, Edit or Remove Database" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" FontSize="10"
+            <TextBlock Text="View Or Edit A Project Issue Track" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" FontSize="10"
                        TextWrapping="Wrap" Padding="2" Foreground="White"/>
             <Image Source="{StaticResource AccountImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
         </Grid>
 
-        
-        
+        <Grid Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="3" Grid.RowSpan="2" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="createButton" Click="createButton_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="Black"/>
+            <TextBlock Text="Create" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                       Foreground="White" FontWeight="DemiBold"/>
+            <TextBlock Text="Create A Project Issue Track" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" FontSize="10"
+                       TextWrapping="Wrap" Padding="2" Foreground="White"/>
+            <Image Source="{StaticResource AccountImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
+        </Grid>
     </Grid>
 </Window>
