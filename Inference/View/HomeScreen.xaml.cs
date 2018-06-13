@@ -24,17 +24,33 @@ namespace Inference.View
             InitializeComponent();
         }
 
-        private void exploreButton_Click(object sender, RoutedEventArgs e)
+        private void ExploreButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void accountsButton_Click(object sender, RoutedEventArgs e)
+        private void AccountsButton_Click(object sender, RoutedEventArgs e)
+        {
+            homepageGrid.Visibility = Visibility.Collapsed;
+            accountsPageGrid.Visibility = Visibility.Visible;
+        }
+
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void createButton_Click(object sender, RoutedEventArgs e)
+        private void NewAccountButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditAccountButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveAccountButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

@@ -5,86 +5,162 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Inference.View"
         mc:Ignorable="d"
-        Title="HomeScreen" Height="450" Width="800">
-    <Grid Background="Black">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        Title="Inference" Height="450" Width="800">
 
-        <Label x:Name="titleLabel" Content="Inference"
+    <Grid x:Name="homeCoreGrid" Background="Black">
+        <Grid x:Name="homepageGrid" Background="Black" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="titleLabel" Content="Inference"
                Grid.Row="0"  Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2"
                HorizontalAlignment="Center" VerticalAlignment="Center"
                Style="{StaticResource homeTitleTextStyle}"/>
 
-        <TextBox x:Name="homescreenSearchBox" Text="Find a Project or Issue" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="4" Margin="40"
+            <TextBox x:Name="homescreenSearchBox" Text="Find a Project or Issue" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="4" Margin="40"
                  TextAlignment="Left" FontStyle="Normal" FontWeight="Light" />
 
-        <Grid Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Button x:Name="accountsButton" Click="accountsButton_Click" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Black"/>
-            <TextBlock Text="Accounts" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+            <Grid Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="accountsButton" Click="AccountsButton_Click" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Black"/>
+                <TextBlock Text="Accounts" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
                        FontWeight="DemiBold" Foreground="White"/>
-            <TextBlock Text="Create, Edit or Remove Accounts" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top"
+                <TextBlock Text="Create, Edit or Remove Accounts" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top"
                        TextWrapping="Wrap" Padding="2" Foreground="White" FontSize="10"/>
-            <Image Source="{StaticResource AccountImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
-        </Grid>
+                <Image Source="{StaticResource AccountImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
+            </Grid>
 
-        <Grid Grid.Column="5" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Button x:Name="exploreButton" Click="exploreButton_Click" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Black"/>
-            <TextBlock Text="Explore" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+            <Grid Grid.Column="5" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="exploreButton" Click="ExploreButton_Click" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Black"/>
+                <TextBlock Text="Explore" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
                        FontWeight="DemiBold" Foreground="White"/>
-            <TextBlock Text="View Or Edit A Project Issue Track" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" FontSize="10"
+                <TextBlock Text="View Or Edit A Project Issue Track" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" FontSize="10"
                        TextWrapping="Wrap" Padding="2" Foreground="White"/>
-            <Image Source="{StaticResource AccountImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
+                <Image Source="{StaticResource ExploreImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
+            </Grid>
+
+            <Grid Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="3" Grid.RowSpan="2" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="createButton" Click="CreateButton_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="Black"/>
+                <TextBlock Text="Create" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                       Foreground="White" FontWeight="DemiBold"/>
+                <TextBlock Text="Create A Project Issue Track" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" FontSize="10"
+                       TextWrapping="Wrap" Padding="2" Foreground="White"/>
+                <Image Source="{StaticResource ProjectImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
+            </Grid>
         </Grid>
 
-        <Grid Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="3" Grid.RowSpan="2" Margin="10">
+        <Grid x:Name="accountsPageGrid" Background="Black" Visibility="Collapsed">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="createButton" Click="createButton_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="Black"/>
-            <TextBlock Text="Create" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                       Foreground="White" FontWeight="DemiBold"/>
-            <TextBlock Text="Create A Project Issue Track" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" FontSize="10"
-                       TextWrapping="Wrap" Padding="2" Foreground="White"/>
-            <Image Source="{StaticResource AccountImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
+
+            <Label x:Name="titleAccountsLabel" Content="Accounts"
+               Grid.Row="0"  Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               Style="{StaticResource homeTitleTextStyle}"/>
+
+            <Grid Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="newAccountButton" Click="NewAccountButton_Click" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Black"/>
+                <TextBlock Text="Create An Account" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       FontWeight="DemiBold" Foreground="White" TextWrapping="Wrap"/>
+                <Image Source="{StaticResource AccountImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
+            </Grid>
+            <Grid Grid.Column="3" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="editAccountButton" Click="EditAccountButton_Click" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Black"/>
+                <TextBlock Text="Edit An Account" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       FontWeight="DemiBold" Foreground="White" TextWrapping="Wrap" Margin="5"/>
+                <Image Source="{StaticResource AccountImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
+            </Grid>
+            <Grid Grid.Column="5" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="removeAccountButton" Click="RemoveAccountButton_Click" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Black"/>
+                <TextBlock Text="Remove An Account" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       FontWeight="DemiBold" Foreground="White" TextWrapping="Wrap"/>
+                <Image Source="{StaticResource AccountImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
+            </Grid>
+            
         </Grid>
+        
     </Grid>
 </Window>
