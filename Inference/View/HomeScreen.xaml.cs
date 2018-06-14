@@ -37,7 +37,8 @@ namespace Inference.View
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-
+            homepageGrid.Visibility = Visibility.Collapsed;
+            createPageGrid.Visibility = Visibility.Visible;
         }
 
         private void NewAccountButton_Click(object sender, RoutedEventArgs e)
@@ -53,6 +54,16 @@ namespace Inference.View
         private void RemoveAccountButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void SubmitCreateButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HomeScreenButton_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

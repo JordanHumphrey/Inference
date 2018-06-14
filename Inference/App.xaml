@@ -36,6 +36,7 @@
         <BitmapImage x:Key="AccountImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\account.png"/>
         <BitmapImage x:Key="ProjectImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\project.png"/>
         <BitmapImage x:Key="ExploreImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\compass.png"/>
+        <BitmapImage x:Key="HomeImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\homelogo.png"/>
         
 
     </Application.Resources>

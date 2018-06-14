@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Inference.View"
         mc:Ignorable="d"
-        Title="Inference" Height="450" Width="800">
+        Title="Inference" Height="450" Width="800" ResizeMode="CanResizeWithGrip">
 
     <Grid x:Name="homeCoreGrid" Background="Black">
         <Grid x:Name="homepageGrid" Background="Black" Visibility="Visible">
@@ -112,6 +112,10 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
+            <Button x:Name="homeScreenAccButton" Click="HomeScreenButton_Click" Background="Black" HorizontalAlignment="Left" Margin="5" BorderBrush="Silver" BorderThickness="2">
+                <Image Source="{StaticResource HomeImageSource}" Margin="5"/>
+            </Button>
+            
             <Label x:Name="titleAccountsLabel" Content="Accounts"
                Grid.Row="0"  Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2"
                HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -159,8 +163,75 @@
                        FontWeight="DemiBold" Foreground="White" TextWrapping="Wrap"/>
                 <Image Source="{StaticResource AccountImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
             </Grid>
+
+        </Grid>
+
+        <Grid x:Name="createPageGrid" Background="Black" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="titleProjectsLabel" Content="Create A Project"
+               Grid.Row="0"  Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               Style="{StaticResource homeTitleTextStyle}"/>
+
+            <TextBox x:Name="projNameTextBox" Text="Project Name" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" 
+                     Margin="10,40,9,40" Foreground="White" Background="Black" TextAlignment="Center" BorderBrush="Silver" BorderThickness="2"/>
+
+            <TextBox x:Name="projVersionTextBox" Text="Build Version" Grid.Row="1" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2" 
+                     Margin="10,40,9,40" Foreground="White" Background="Black" TextAlignment="Center" BorderBrush="Silver" BorderThickness="2"/>
+
+            <TextBox x:Name="projCreatedByTextBox" Text="Created By" Grid.Row="1" Grid.RowSpan="2" Grid.Column="5" Grid.ColumnSpan="2" 
+                     Margin="10,40,9,40" Foreground="White" Background="Black" TextAlignment="Center" BorderBrush="Silver" BorderThickness="2"/>
+
+            <TextBox x:Name="placeholder" Text="Creation Date" Grid.Row="2" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2" 
+                     Margin="10,40,9,40" Foreground="White" Background="Black" TextAlignment="Center" BorderBrush="Silver" BorderThickness="2"
+                     IsEnabled="False"/>
+
+            <TextBox x:Name="placeholder2" Text="Description" Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" 
+                     Margin="10,40,9,40" Foreground="White" Background="Black" TextAlignment="Center" BorderBrush="Silver" BorderThickness="2"
+                     IsEnabled="False"/>
+
+            <TextBox x:Name="placeholder3" Text="Relevant Information" Grid.Row="2" Grid.RowSpan="2" Grid.Column="5" Grid.ColumnSpan="2" 
+                     Margin="10,40,9,40" Foreground="White" Background="Black" TextAlignment="Center" BorderBrush="Silver" BorderThickness="2"
+                     IsEnabled="False"/>
+
+            <TextBox x:Name="projDescriptionTextBox" Text="Brief Description" Grid.Row="3" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="2" 
+                     Margin="10,31,9,10" Foreground="Silver" Background="Black" TextAlignment="Center" BorderBrush="Silver" BorderThickness="2"
+                     TextWrapping="Wrap"/>
+
+            <TextBox x:Name="projSummaryTextBox" Text="Summary or Info" Grid.Row="3" Grid.RowSpan="4" Grid.Column="5" Grid.ColumnSpan="2" 
+                     Margin="10,31,9,10" Foreground="Silver" Background="Black" TextAlignment="Center" BorderBrush="Silver" BorderThickness="2"
+                     TextWrapping="Wrap"/>
+
+            <Calendar x:Name="projcreateDateCalendar" Grid.Row="3" Grid.RowSpan="4" Grid.Column="3" Grid.ColumnSpan="2" Margin="9,31,11,10" Foreground="White" Background="Black"/>
+
+            <Button x:Name="submitCreateButton" Content="Submit and Create" Click="SubmitCreateButton_Click" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="6" Margin="15"
+                    Background="Black" Foreground="White" BorderBrush="Silver" BorderThickness="2"/>
+
+            <Button x:Name="homeScreenButton" Click="HomeScreenButton_Click" Background="Black" HorizontalAlignment="Left" Margin="5" BorderBrush="Silver" BorderThickness="2">
+                <Image Source="{StaticResource HomeImageSource}" Margin="5"/>
+            </Button>
             
         </Grid>
-        
+
     </Grid>
 </Window>
