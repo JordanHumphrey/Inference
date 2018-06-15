@@ -6,8 +6,54 @@
         xmlns:local="clr-namespace:Inference.View"
         mc:Ignorable="d"
         Title="Inference" Height="450" Width="800" ResizeMode="CanResizeWithGrip">
-
     <Grid x:Name="homeCoreGrid" Background="Black">
+
+        <Grid x:Name="loginPageGrid" Background="Black" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="titleLoginLabel" Content="Inference"
+               Grid.Row="0"  Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               Style="{StaticResource homeTitleTextStyle}" Background="Black"/>
+
+            <TextBlock x:Name="descriptionloginLabel" Text="Project Development Task &amp; Issue Tracking"
+                   Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="4"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Foreground="White" TextWrapping="Wrap" Margin="0,44" TextAlignment="Center" Width="396"/>
+
+            <TextBox x:Name="usernameTextBox" Text="User Name" Grid.Row="2" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2" 
+                     Margin="10,40,9,40" Foreground="White" Background="Black" TextAlignment="Center" BorderBrush="Silver" BorderThickness="2"/>
+
+            <TextBox x:Name="passwordTextBox" Text="Password" Grid.Row="3" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2" 
+                     Margin="10,40,9,40" Foreground="White" Background="Black" TextAlignment="Center" BorderBrush="Silver" BorderThickness="2"/>
+
+            <Button x:Name="loginButton" Content="Login" Click="LoginButton_Click" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Margin="10,40,9,40"
+                    Background="Silver" Foreground="Black" FontWeight="DemiBold" BorderBrush="Silver" BorderThickness="2" Grid.RowSpan="2"/>
+
+            <Button x:Name="createAccountButton" Content="Create Account" Click="CreateAccountButton_Click" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Margin="10,40,9,40"
+                    Background="Silver" Foreground="Black" FontWeight="DemiBold" BorderBrush="Silver" BorderThickness="2" Grid.RowSpan="2"/>
+
+        </Grid>
+
         <Grid x:Name="homepageGrid" Background="Black" Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -33,12 +79,15 @@
             <Label x:Name="titleLabel" Content="Inference"
                Grid.Row="0"  Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2"
                HorizontalAlignment="Center" VerticalAlignment="Center"
-               Style="{StaticResource homeTitleTextStyle}"/>
+               Style="{StaticResource homeTitleTextStyle}" Background="Black">
+
+            </Label>
 
             <TextBox x:Name="homescreenSearchBox" Text="Find a Project or Issue" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="4" Margin="40"
                  TextAlignment="Left" FontStyle="Normal" FontWeight="Light" />
 
-            <Grid Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10">
+            <Grid x:Name="grid" Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10">
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -54,8 +103,23 @@
                        TextWrapping="Wrap" Padding="2" Foreground="White" FontSize="10"/>
                 <Image Source="{StaticResource AccountImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
             </Grid>
-
-            <Grid Grid.Column="5" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10">
+            <Grid x:Name="grid2" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="3" Grid.RowSpan="2" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="createButton" Click="CreateButton_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="Black"/>
+                <TextBlock Text="Create" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                       Foreground="White" FontWeight="DemiBold"/>
+                <TextBlock Text="Create A Project Issue Track" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" FontSize="10"
+                       TextWrapping="Wrap" Padding="2" Foreground="White"/>
+                <Image Source="{StaticResource ProjectImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
+            </Grid>
+            <Grid x:Name="grid1" Grid.Column="5" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -72,22 +136,7 @@
                 <Image Source="{StaticResource ExploreImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
             </Grid>
 
-            <Grid Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="3" Grid.RowSpan="2" Margin="10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Button x:Name="createButton" Click="CreateButton_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="Black"/>
-                <TextBlock Text="Create" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                       Foreground="White" FontWeight="DemiBold"/>
-                <TextBlock Text="Create A Project Issue Track" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" FontSize="10"
-                       TextWrapping="Wrap" Padding="2" Foreground="White"/>
-                <Image Source="{StaticResource ProjectImageSource}" Height="60" Width="60" Grid.RowSpan="2"/>
-            </Grid>
+
         </Grid>
 
         <Grid x:Name="accountsPageGrid" Background="Black" Visibility="Collapsed">
@@ -115,7 +164,7 @@
             <Button x:Name="homeScreenAccButton" Click="HomeScreenButton_Click" Background="Black" HorizontalAlignment="Left" Margin="5" BorderBrush="Silver" BorderThickness="2">
                 <Image Source="{StaticResource HomeImageSource}" Margin="5"/>
             </Button>
-            
+
             <Label x:Name="titleAccountsLabel" Content="Accounts"
                Grid.Row="0"  Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2"
                HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -230,7 +279,7 @@
             <Button x:Name="homeScreenButton" Click="HomeScreenButton_Click" Background="Black" HorizontalAlignment="Left" Margin="5" BorderBrush="Silver" BorderThickness="2">
                 <Image Source="{StaticResource HomeImageSource}" Margin="5"/>
             </Button>
-            
+
         </Grid>
 
     </Grid>

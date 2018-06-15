@@ -63,7 +63,19 @@ namespace Inference.View
 
         private void HomeScreenButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            accountsPageGrid.Visibility = Visibility.Collapsed;
+            createPageGrid.Visibility = Visibility.Collapsed;
+            homepageGrid.Visibility = Visibility.Visible;
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CreateAccountButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
