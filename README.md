@@ -8,4 +8,4 @@ Current UI In-Progress
 
 ![alt text](https://github.com/JordanHumphrey/Inference/blob/master/Inference/Images/accountsPage.JPG)
 
-![alt text](https://github.com/JordanHumphrey/Inference/blob/master/Inference/Images/projectsCreate.JPG)
+![alt text](https://github.com/JordanHumphrey/Inference/blob/master/Inference/Images/projectCreate.JPG)
