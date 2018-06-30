@@ -10,20 +10,21 @@ C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\bin\Deb
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\bin\Debug\SQLite-net.pdb
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\bin\Debug\SQLite-net.xml
-C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\View\CoreWindow.g.cs
+C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference.csprojAssemblyReference.cache
+C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\View\NewNewsItemWindow.g.cs
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\View\HomeScreen.g.cs
-C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\View\NewIssueWindow.g.cs
-C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\View\UserControls\IssueControl.g.cs
+C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\View\MainWindow.g.cs
+C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\View\User Controls\NewsItemControl.g.cs
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\App.g.cs
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference_Content.g.cs
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference_MarkupCompile.cache
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference_MarkupCompile.lref
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\App.baml
-C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\View\CoreWindow.baml
+C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\View\NewNewsItemWindow.baml
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\View\HomeScreen.baml
-C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\View\NewIssueWindow.baml
-C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\View\UserControls\IssueControl.baml
+C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\View\MainWindow.baml
+C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\View\User Controls\NewsItemControl.baml
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference.g.resources
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference.Properties.Resources.resources
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference.csproj.GenerateResource.cache
@@ -31,4 +32,3 @@ C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Deb
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference.csproj.CopyComplete
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference.exe
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference.pdb
-C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\obj\Debug\Inference.csprojAssemblyReference.cache

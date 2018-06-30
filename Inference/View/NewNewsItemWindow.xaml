@@ -1,0 +1,14 @@
+﻿<Window x:Class="Inference.View.NewNewsItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Inference.View"
+        mc:Ignorable="d"
+        Title="Inference" Height="135" Width="600" Background="#3F3F46">
+    <StackPanel>
+        <TextBox x:Name="NewsNameEntry" Text="Publisher Name" Style="{StaticResource textBoxStyle}" Margin="5" FontStyle="Italic" FontWeight="Light"/>
+        <TextBox x:Name="NewsContentEntry" Text="What News Do You Bring?" Style="{StaticResource textBoxStyle}" Margin="5" FontStyle="Italic" FontWeight="Light"/>
+        <Button x:Name="AddNewsButton" Click="AddNewsButton_Click" Content="Submit News" Style="{StaticResource buttonStyle}" Margin="5" BorderBrush="Silver" BorderThickness="2"/>
+    </StackPanel>
+</Window>

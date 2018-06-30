@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inference.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Inference.View
@@ -17,65 +19,16 @@ namespace Inference.View
     /// <summary>
     /// Interaction logic for HomeScreen.xaml
     /// </summary>
-    public partial class HomeScreen : Window
+    public partial class HomeScreen : Page
     {
+        HomeScreenVM homeVM;
+
         public HomeScreen()
         {
             InitializeComponent();
-        }
 
-        private void ExploreButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AccountsButton_Click(object sender, RoutedEventArgs e)
-        {
-            homepageGrid.Visibility = Visibility.Collapsed;
-            accountsPageGrid.Visibility = Visibility.Visible;
-        }
-
-        private void CreateButton_Click(object sender, RoutedEventArgs e)
-        {
-            homepageGrid.Visibility = Visibility.Collapsed;
-            createPageGrid.Visibility = Visibility.Visible;
-        }
-
-        private void NewAccountButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void EditAccountButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void RemoveAccountButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void SubmitCreateButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void HomeScreenButton_Click(object sender, RoutedEventArgs e)
-        {
-            accountsPageGrid.Visibility = Visibility.Collapsed;
-            createPageGrid.Visibility = Visibility.Collapsed;
-            homepageGrid.Visibility = Visibility.Visible;
-        }
-
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CreateAccountButton_Click(object sender, RoutedEventArgs e)
-        {
-
+            homeVM = new HomeScreenVM();
+            homescreenGrid.DataContext = homeVM;
         }
     }
 }

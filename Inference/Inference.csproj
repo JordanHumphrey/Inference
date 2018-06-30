@@ -75,42 +75,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\News.cs" />
     <Compile Include="Model\Project.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="ViewModel\DatabaseHelper.cs" />
-    <Compile Include="ViewModel\ReportsVM.cs" />
-    <Compile Include="View\CoreWindow.xaml.cs">
-      <DependentUpon>CoreWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModel\HomeScreenVM.cs" />
+    <Compile Include="View\Commands\NewNewsCommand.cs" />
+    <Compile Include="View\NewNewsItemWindow.xaml.cs">
+      <DependentUpon>NewNewsItemWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HomeScreen.xaml.cs">
       <DependentUpon>HomeScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\NewIssueWindow.xaml.cs">
-      <DependentUpon>NewIssueWindow.xaml</DependentUpon>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\IssueControl.xaml.cs">
-      <DependentUpon>IssueControl.xaml</DependentUpon>
+    <Compile Include="View\User Controls\NewsItemControl.xaml.cs">
+      <DependentUpon>NewsItemControl.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\CoreWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\HomeScreen.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\NewIssueWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UserControls\IssueControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Report.cs" />
@@ -150,7 +136,37 @@
     <Resource Include="Images\compass.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\NewNewsItemWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HomeScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\User Controls\NewsItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Images\homelogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\issueslogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\settingslogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\powerlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\newfolderlogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.5\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" />

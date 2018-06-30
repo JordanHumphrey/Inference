@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\App.xaml
-4-1076570953
+4-2144310424
 2632359942
-17213390338
+19-1535300917
 71-1481173288
-View\CoreWindow.xaml;View\HomeScreen.xaml;View\NewIssueWindow.xaml;View\UserControls\IssueControl.xaml;
+View\NewNewsItemWindow.xaml;View\HomeScreen.xaml;View\MainWindow.xaml;View\User Controls\NewsItemControl.xaml;
 
-False
+True
 
