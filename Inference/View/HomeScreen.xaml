@@ -41,7 +41,7 @@
             </Grid>
         </Label>
         <ListView x:Name="newseventslistView" 
-                  Style="{StaticResource listviewStyle}" 
+                  Style="{StaticResource listviewStyle}"
                   Grid.Row="0" Grid.Column="0"
                   Grid.ColumnSpan="2" 
                   Margin="20,62,23,0" 
