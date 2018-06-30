@@ -6,17 +6,40 @@
              xmlns:local="clr-namespace:Inference.View.User_Controls"
              mc:Ignorable="d" 
              d:DesignHeight="35" d:DesignWidth="395" HorizontalAlignment="Stretch">
-    <Grid Background="White">
+    <Grid Background="#000033">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="104*"/>
-            <ColumnDefinition Width="291*"/>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="266*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock x:Name="NewsNameTextBlock" Text="Jordan H" Grid.Column="0" FontWeight="Bold" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="DarkGray"/>
-        <TextBlock x:Name="NewsItemTextBlock" Text="This is a test of the first news item" FontWeight="Bold" Grid.Column="1" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Foreground="DarkGray"/>
+        <TextBlock x:Name="NewsNameTextBlock" 
+                   Text="Jordan H" 
+                   Grid.Column="0" 
+                   FontWeight="Bold" 
+                   FontSize="12" 
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Center" 
+                   Foreground="MediumPurple" 
+                   Height="16" 
+                   Width="50"
+                   Margin="5"
+                   TextAlignment="Left"/>
+        
+        <TextBlock x:Name="NewsItemTextBlock" 
+                   Text="This is a test of the first news item" 
+                   FontWeight="Bold"
+                   Grid.Column="1" 
+                   FontSize="12" 
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center" 
+                   Margin="5"
+                   Foreground="MediumPurple"
+                   Height="16" 
+                   Width="193"
+                   TextAlignment="Left"/>
 
     </Grid>
 </UserControl>

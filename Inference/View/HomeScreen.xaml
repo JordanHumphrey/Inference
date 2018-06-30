@@ -25,9 +25,9 @@
                       HorizontalAlignment="Center" Margin="5" Command="{Binding NewNewsCommand}"/>
         </Menu>
 
-        <Label Grid.Row="0" Grid.Column="0" Margin="20,20,23,141"
-               Background="White" Grid.ColumnSpan="2"
-               BorderBrush="Silver" BorderThickness="0.5">
+        <Label Grid.Row="0" Grid.Column="0" Margin="22,20,23,141"
+               Background="#000033" Grid.ColumnSpan="2">
+
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -36,8 +36,8 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="News &amp; Announcements" Grid.Row="0" FontSize="16" VerticalAlignment="Center" Foreground="DeepSkyBlue"/>
-                <TextBlock Text="From your Team, Managers and even Interns" Grid.Row="1" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="DeepSkyBlue" Margin="0,2,0,0" Height="16"/>
+                <TextBlock Text="News &amp; Announcements" Grid.Row="0" FontSize="16" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                <TextBlock Text="From your Team, Managers and even Interns" Grid.Row="1" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="WhiteSmoke" Margin="0,1" Height="14"/>
             </Grid>
         </Label>
         <ListView x:Name="newseventslistView" 
@@ -45,10 +45,11 @@
                   Grid.Row="0" Grid.Column="0"
                   Grid.ColumnSpan="2" 
                   Margin="20,62,23,0" 
-                  ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                  ScrollViewer.VerticalScrollBarVisibility="Hidden"
                   HorizontalContentAlignment="Left"
                   ItemsSource="{Binding NewsList}"
-                  BorderBrush="Silver" BorderThickness="0.5">
+                  BorderBrush="Silver" BorderThickness="0">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -59,7 +60,7 @@
         </ListView>
 
         <Label Grid.Row="1" Grid.Column="0" Margin="20,20,10,182"
-               Background="DeepSkyBlue">
+               Background="#000033">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -68,18 +69,24 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Projects" Grid.Row="0" FontSize="16" VerticalAlignment="Center" Foreground="White"/>
-                <TextBlock Text="Your Assigned Projects" Grid.Row="1" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" Margin="0,2,0,0" Height="16" Width="105"/>
+                <TextBlock Text="Projects" Grid.Row="0" FontSize="16" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                <TextBlock Text="Your Assigned Projects" Grid.Row="1" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="WhiteSmoke" Margin="0,2,0,0" Height="16" Width="105"/>
             </Grid>
         </Label>
-        <ListView x:Name="projectsListView" Style="{StaticResource listviewStyle}" Grid.Row="1" Grid.Column="0" Margin="20,65,10,20" ScrollViewer.HorizontalScrollBarVisibility="Hidden" HorizontalContentAlignment="Center">
+        <ListView x:Name="projectsListView" 
+                  Style="{StaticResource listviewStyle}" 
+                  Grid.Row="1" Grid.Column="0" 
+                  Margin="20,65,10,20" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                  HorizontalContentAlignment="Center"
+                  BorderThickness="0">
             <ListViewItem>
 
             </ListViewItem>
         </ListView>
 
         <Label Grid.Row="1" Grid.Column="1" Margin="25,20,25,182"
-               Background="DeepSkyBlue">
+               Background="#000033">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -88,43 +95,20 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Tasks" Grid.Row="0" FontSize="16" VerticalAlignment="Center" Foreground="White"/>
-                <TextBlock Text="Your Current Assigned Tasks" Grid.Row="1" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" Margin="0,2,0,0" Height="16"/>
+                <TextBlock Text="Tasks" Grid.Row="0" FontSize="16" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+                <TextBlock Text="Your Current Assigned Tasks" Grid.Row="1" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="WhiteSmoke" Margin="0,2,0,0" Height="16"/>
             </Grid>
         </Label>
-        <ListView x:Name="mostrecentissueListView" Style="{StaticResource listviewStyle}" Grid.Row="1" Grid.Column="1" Margin="25,65,25,20" ScrollViewer.HorizontalScrollBarVisibility="Hidden" HorizontalContentAlignment="Center">
+        <ListView x:Name="mostrecentissueListView" 
+                  Style="{StaticResource listviewStyle}" 
+                  Grid.Row="1" Grid.Column="1" Margin="25,65,25,20" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                  HorizontalContentAlignment="Center"
+                  BorderThickness="0">
 
             <ListViewItem/>
         </ListView>
 
-        <Calendar Grid.Column="2" Grid.Row="0" 
-                  HorizontalAlignment="Stretch" 
-                  VerticalAlignment="Stretch" 
-                  HorizontalContentAlignment="Stretch" 
-                  VerticalContentAlignment="Stretch"                  
-                  Foreground="DeepSkyBlue"
-                  Background="White" Margin="0,20"
-                  />
+        
     </Grid>
-
-    <!--<Viewbox>
-        <ListView x:Name="newseventslistView" Style="{StaticResource listviewStyle}" DockPanel.Dock="Top" Margin="20,20,35,20" Height="130" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
-            <TextBlock Text="News &amp; Events" Style="{StaticResource textBlockStyle}" FontSize="18" FontWeight="DemiBold" TextAlignment="Center" Width="735"/>
-
-        </ListView>
-        <ListView x:Name="projectsListView" Style="{StaticResource listviewStyle}" DockPanel.Dock="Left" Margin="20" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
-            <TextBlock Text="Current Projects" Style="{StaticResource textBlockStyle}" FontSize="18" HorizontalAlignment="Center" FontWeight="DemiBold" TextAlignment="Center" Width="290"/>
-            <ListViewItem>
-
-            </ListViewItem>
-        </ListView>
-        <ListView x:Name="mostrecentissueListView" Style="{StaticResource listviewStyle}" DockPanel.Dock="Right" Margin="20" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
-            <TextBlock Text="Recent Issues" Style="{StaticResource textBlockStyle}" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold" TextAlignment="Center" Width="390"/>
-            <ListViewItem>
-
-            </ListViewItem>
-        </ListView>
-    </Viewbox>-->
-
-
 </Page>

@@ -33,35 +33,5 @@ namespace Inference.View
             homeVM = new HomeScreenVM();
             MainWin.Content = new HomeScreen();
         }
-
-        private void ExitBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        public void AccountBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //accountVM.DisplayAccount();
-        }
-
-        private void DashboardBtn_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void ProjectsBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //projectVM.DisplayNewProject();
-        }
-
-        private void NewProjectBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //projectVM.DisplayProjects();
-        }
-
-        private void NewNewsBtn_Click(object sender, RoutedEventArgs e)
-        {
-            homeVM.CreateNews();
-        }
     }
 }
