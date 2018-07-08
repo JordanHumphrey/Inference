@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Inference.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" SizeToContent="WidthAndHeight" ResizeMode="CanResizeWithGrip">
+        Title="Inference" Height="450" Width="800" SizeToContent="WidthAndHeight" ResizeMode="CanResizeWithGrip">
 
     <Grid x:Name="mainGrid" Background="#000038">
-        <StackPanel HorizontalAlignment="Left" Width="185" Background="#000033">
+        <StackPanel x:Name="NavigationPanel" HorizontalAlignment="Left" Width="185" Background="#000033">
             <!--Title Logo is here-->
             <Grid Height="60">
                 <Grid.ColumnDefinitions>

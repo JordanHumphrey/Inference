@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Inference.View"
       xmlns:nic="clr-namespace:Inference.View.User_Controls"
+      xmlns:chart="clr-namespace:Inference.View.User_Controls.Doughnut_Chart"
       xmlns:vm="clr-namespace:Inference.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
@@ -20,15 +21,12 @@
             <RowDefinition Height="203*"/>
             <RowDefinition Height="247*"/>
         </Grid.RowDefinitions>
-        <Menu Margin="20,10,20,156" Grid.ColumnSpan="2" Background="#3F3F46" Foreground="White" Visibility="Collapsed">
-            <MenuItem Header="Add News"  Background="#3F3F46" Foreground="White" FontSize="14" VerticalAlignment="Center"
-                      HorizontalAlignment="Center" Margin="5" Command="{Binding NewNewsCommand}"/>
-        </Menu>
 
+        <!--News & Announcements Label-->
         <Label Grid.Row="0" Grid.Column="0" Margin="22,20,23,141"
                Background="#000033" Grid.ColumnSpan="2">
 
-            <Grid>
+            <Grid Width="478">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -36,10 +34,24 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="News &amp; Announcements" Grid.Row="0" FontSize="16" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
-                <TextBlock Text="From your Team, Managers and even Interns" Grid.Row="1" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="WhiteSmoke" Margin="0,1" Height="14"/>
+                <TextBlock Text="News &amp; Announcements" 
+                           Grid.Row="0" Grid.Column="0" 
+                           FontSize="16" 
+                           VerticalAlignment="Center" 
+                           Foreground="WhiteSmoke"/>
+                <TextBlock Text="From your Team, Managers and even Interns" 
+                           Grid.Row="1" 
+                           Grid.Column="0" 
+                           FontSize="10" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Left" 
+                           Foreground="WhiteSmoke" 
+                           Margin="0,1" 
+                           Height="14"/>                
             </Grid>
         </Label>
+
+        <!--News List View-->
         <ListView x:Name="newseventslistView" 
                   Style="{StaticResource listviewStyle}"
                   Grid.Row="0" Grid.Column="0"
@@ -59,6 +71,24 @@
             </ListView.ItemTemplate>
         </ListView>
 
+        <!--<Menu Background="White" 
+              Foreground="Black" 
+              Grid.Column="1" 
+              Grid.Row="0"              
+              Height="42" Width="48"
+              Margin="193,20,25,141">
+            <MenuItem Header="Add" 
+                              Background="#000033"
+                              Foreground="White"
+                              FontSize="14" 
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Center"
+                              HorizontalContentAlignment="Center"
+                              VerticalContentAlignment="Center"
+                              Command="{Binding NewNewsCommand}"/>
+        </Menu>-->
+
+        <!--Projects Label-->
         <Label Grid.Row="1" Grid.Column="0" Margin="20,20,10,182"
                Background="#000033">
             <Grid>
@@ -73,6 +103,8 @@
                 <TextBlock Text="Your Assigned Projects" Grid.Row="1" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="WhiteSmoke" Margin="0,2,0,0" Height="16" Width="105"/>
             </Grid>
         </Label>
+
+        <!--Projects List View-->
         <ListView x:Name="projectsListView" 
                   Style="{StaticResource listviewStyle}" 
                   Grid.Row="1" Grid.Column="0" 
@@ -85,6 +117,7 @@
             </ListViewItem>
         </ListView>
 
+        <!--Tasks Label-->
         <Label Grid.Row="1" Grid.Column="1" Margin="25,20,25,182"
                Background="#000033">
             <Grid>
@@ -99,6 +132,8 @@
                 <TextBlock Text="Your Current Assigned Tasks" Grid.Row="1" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="WhiteSmoke" Margin="0,2,0,0" Height="16"/>
             </Grid>
         </Label>
+
+        <!--Tasks List View-->
         <ListView x:Name="mostrecentissueListView" 
                   Style="{StaticResource listviewStyle}" 
                   Grid.Row="1" Grid.Column="1" Margin="25,65,25,20" 
@@ -110,5 +145,12 @@
         </ListView>
 
         
+        <chart:DougnutChart Grid.Row="1"
+                            Grid.Column="2" 
+                            Margin="20"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"/>
+        
+
     </Grid>
 </Page>

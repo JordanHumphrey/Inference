@@ -23,7 +23,7 @@
 
         <Style x:Key="textBlockStyle" TargetType="TextBlock">
             <Setter Property="Foreground" Value="#F1F1F1"/>
-            <Setter Property="Background" Value="DeepSkyBlue"/>
+            <Setter Property="Background" Value="#000033"/>
             <Setter Property="FontSize" Value="18"/>
         </Style>
 
@@ -48,6 +48,32 @@
             <Setter Property="BorderThickness" Value="2"/>
         </Style>
 
+        <Style TargetType="PasswordBox" x:Key="roundcornerpassword">
+            <Setter Property="PasswordChar" Value="●"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border CornerRadius="5" x:Name="Bd" Background="#000044" BorderBrush="WhiteSmoke" BorderThickness="1" OpacityMask="{x:Null}">
+                            <ScrollViewer SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" x:Name="PART_ContentHost" Template="{DynamicResource ScrollViewerControlTemplate1}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrush}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <BitmapImage x:Key="AccountImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\account.png"/>
         <BitmapImage x:Key="ProjectImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\project.png"/>
         <BitmapImage x:Key="ExploreImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\compass.png"/>
@@ -56,7 +82,8 @@
         <BitmapImage x:Key="SettingsImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\settingslogo.png"/>
         <BitmapImage x:Key="ExitImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\powerlogo.png"/>
         <BitmapImage x:Key="NewFolderSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\newfolderlogo.png"/>
-        
+        <BitmapImage x:Key="VerifiedImage" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\verified.png"/>
+
 
     </Application.Resources>
 </Application>

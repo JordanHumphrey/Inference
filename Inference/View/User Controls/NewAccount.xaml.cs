@@ -1,5 +1,4 @@
-﻿using Inference.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,28 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Inference.View
+namespace Inference.View.User_Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for NewAccount.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NewAccount : UserControl
     {
-        #region ViewModel Objects
-
-        HomeScreenVM homeVM;
-        Login loginScreen;
-
-
-        #endregion
-
-        public MainWindow()
+        public NewAccount()
         {
             InitializeComponent();
-            homeVM = new HomeScreenVM();
-            MainWin.Content = new Login();
         }
     }
 }
