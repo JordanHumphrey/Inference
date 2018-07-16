@@ -1,32 +1,30 @@
-﻿using Inference.ViewModel.LoginVM;
+﻿using Inference.Model;
+using Inference.ViewModel.LoginVM;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Inference.View.Commands
 {
-    public class NewAccountCommand : ICommand
+    public class LoginCommand : ICommand
     {
-        public LoginVM VM { get; set; }
+        public LoginVM VM {get; set;}
 
         public event EventHandler CanExecuteChanged;
 
-        public NewAccountCommand(LoginVM vm)
+        public LoginCommand(LoginVM vm)
         {
             VM = vm;
         }
 
         public bool CanExecute(object parameter)
         {
+            var user = parameter as User;
             return true;
         }
 
         public void Execute(object parameter)
         {
-            VM.ShowNewAccountUC();
+            VM.Login(parameter);
         }
     }
 }

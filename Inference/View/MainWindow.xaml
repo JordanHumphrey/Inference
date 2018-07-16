@@ -7,135 +7,15 @@
         mc:Ignorable="d"
         Title="Inference" Height="450" Width="800" SizeToContent="WidthAndHeight" ResizeMode="CanResizeWithGrip">
 
-    <Grid x:Name="mainGrid" Background="#000038">
-        <StackPanel x:Name="NavigationPanel" HorizontalAlignment="Left" Width="185" Background="#000033">
-            <!--Title Logo is here-->
-            <Grid Height="60">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="67*"/>
-                    <ColumnDefinition Width="118*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <TextBlock Text="Inference" Foreground="WhiteSmoke"
-                           FontSize="16" Grid.Column="1"
-                           TextAlignment="Left"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Left"
-                           Height="20" Width="70"
-                           Margin="0,7"/>
-            </Grid>
-
-            <!--Dashboard button xaml is here-->
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="67*"/>
-                    <ColumnDefinition Width="118*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Button x:Name="DashboardBtn" 
-                        Style="{StaticResource buttonStyle}" 
-                        Grid.ColumnSpan="2"
-                        HorizontalContentAlignment="Center"/>
-                <TextBlock Text="Dashboard" 
-                           TextAlignment="Left" 
-                           Grid.Column="1"
-                           Foreground="WhiteSmoke" 
-                           VerticalAlignment="Center" 
-                           Height="16" Margin="0,7"/>
-            </Grid>
-            
-            <!--Projects button xaml is here-->
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="67*"/>
-                    <ColumnDefinition Width="118*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Button x:Name="ProjectsBtn" Style="{StaticResource buttonStyle}" 
-                        Grid.ColumnSpan="2"
-                        HorizontalContentAlignment="Center"/>
-                <TextBlock Text="Projects" 
-                           TextAlignment="Left" 
-                           Grid.Column="1"
-                           Foreground="WhiteSmoke" 
-                           VerticalAlignment="Center" 
-                           Height="16" Margin="0,7"/>
-            </Grid>
-            
-            <!--Team button xaml is here-->
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="67*"/>
-                    <ColumnDefinition Width="118*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Button x:Name="TeamBtn" Style="{StaticResource buttonStyle}" 
-                        Grid.ColumnSpan="2"
-                        HorizontalContentAlignment="Center"/>
-                <TextBlock Text="Teams" 
-                           TextAlignment="Left" 
-                           Grid.Column="1"
-                           Foreground="WhiteSmoke" 
-                           VerticalAlignment="Center" 
-                           Height="16" Margin="0,7"/>
-            </Grid>
-            
-            <!--Tasks & Issues button xaml is here-->
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="67*"/>
-                    <ColumnDefinition Width="118*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Button x:Name="TasksBtn" Style="{StaticResource buttonStyle}" 
-                        Grid.ColumnSpan="2"
-                        HorizontalContentAlignment="Center"/>
-                <TextBlock Text="Tasks &amp; Issues" 
-                           TextAlignment="Left" 
-                           Grid.Column="1"
-                           Foreground="WhiteSmoke" 
-                           VerticalAlignment="Center" 
-                           Height="16" Margin="0,7"/>
-            </Grid>
-
-            <!--Statistics-->
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="67*"/>
-                    <ColumnDefinition Width="118*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Button x:Name="StatisticsBtn" Style="{StaticResource buttonStyle}" 
-                        Grid.ColumnSpan="2"
-                        HorizontalContentAlignment="Center"/>
-                <TextBlock Text="Statistics" 
-                           TextAlignment="Left" 
-                           Grid.Column="1"
-                           Foreground="WhiteSmoke" 
-                           VerticalAlignment="Center" 
-                           Height="16" Margin="0,7"/>
-            </Grid>
-        </StackPanel>
+    <Grid x:Name="mainGrid" Background="#404040">
+        
         
         <!--APPLICATION FRAME-->
-        <Frame x:Name="MainWin"
-               Margin="185,60,0,0"
+        <Frame x:Name="MainFrame"
                HorizontalContentAlignment="Stretch"
                NavigationUIVisibility="Hidden" 
                VerticalContentAlignment="Stretch" 
-               Background="#000044"/>
+               Background="SlateGray"/>
     </Grid>
 
 </Window>

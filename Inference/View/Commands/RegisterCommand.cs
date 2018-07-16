@@ -1,28 +1,29 @@
-﻿using Inference.ViewModel;
+﻿using Inference.Model;
+using Inference.ViewModel.LoginVM;
 using System;
 using System.Windows.Input;
 
 namespace Inference.View.Commands
 {
-    public class NewNewsCommand : ICommand
+    public class RegisterCommand : ICommand
     {
-        public HomeScreenVM VM { get; set; }
-
+        public LoginVM VM { get; set; }
         public event EventHandler CanExecuteChanged;
 
-        public NewNewsCommand(HomeScreenVM vm)
+        public RegisterCommand(LoginVM vm)
         {
             VM = vm;
         }
 
         public bool CanExecute(object parameter)
         {
+            var user = parameter as User;
             return true;
         }
 
         public void Execute(object parameter)
         {
-            VM.CreateNews();
+            VM.Register();
         }
     }
 }

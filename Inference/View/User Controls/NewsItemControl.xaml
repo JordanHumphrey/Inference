@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Inference.View.User_Controls"
              mc:Ignorable="d" 
              d:DesignHeight="35" d:DesignWidth="395" HorizontalAlignment="Stretch">
-    <Grid Background="#000033">
+    <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="129*"/>
             <ColumnDefinition Width="266*"/>
@@ -22,7 +22,7 @@
                    FontSize="12" 
                    HorizontalAlignment="Left" 
                    VerticalAlignment="Center" 
-                   Foreground="MediumPurple" 
+                   Foreground="#00ccff" 
                    Height="16" 
                    Width="50"
                    Margin="5"
@@ -36,7 +36,7 @@
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center" 
                    Margin="5"
-                   Foreground="MediumPurple"
+                   Foreground="#00ccff"
                    Height="16" 
                    Width="193"
                    TextAlignment="Left"/>

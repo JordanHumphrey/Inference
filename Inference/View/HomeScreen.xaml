@@ -11,7 +11,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="HomeScreen" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
 
-    <Grid x:Name="homescreenGrid">
+    <Grid x:Name="homescreenGrid" Background="#003366">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -23,8 +23,8 @@
         </Grid.RowDefinitions>
 
         <!--News & Announcements Label-->
-        <Label Grid.Row="0" Grid.Column="0" Margin="22,20,23,141"
-               Background="#000033" Grid.ColumnSpan="2">
+        <Label Grid.Row="0" Grid.Column="0" Margin="20,20,23,141"
+               Background="#00ccff" Grid.ColumnSpan="2">
 
             <Grid Width="478">
                 <Grid.RowDefinitions>
@@ -90,7 +90,7 @@
 
         <!--Projects Label-->
         <Label Grid.Row="1" Grid.Column="0" Margin="20,20,10,182"
-               Background="#000033">
+               Background="#00ccff">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -119,7 +119,7 @@
 
         <!--Tasks Label-->
         <Label Grid.Row="1" Grid.Column="1" Margin="25,20,25,182"
-               Background="#000033">
+               Background="#00ccff">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
