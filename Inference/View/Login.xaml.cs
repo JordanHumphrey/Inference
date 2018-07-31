@@ -26,9 +26,15 @@ namespace Inference.View
         public Login()
         {
             InitializeComponent();
+            OnStartup();
             LoginVM vm = new LoginVM();
             DataContext = vm;
             vm.HasLoggedIn += Vm_HasLoggedIn;
+        }
+
+        public void OnStartup()
+        {
+            
         }
 
         public System.Security.SecureString Password

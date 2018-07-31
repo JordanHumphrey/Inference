@@ -5,17 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Inference.View"
         mc:Ignorable="d"
-        Title="Inference" Height="450" Width="800" SizeToContent="WidthAndHeight" ResizeMode="CanResizeWithGrip">
+        Title="Inference" Height="450" Width="800" ResizeMode="CanResizeWithGrip">
 
+    <Window.Background>
+        <ImageBrush>
+            <ImageBrush.ImageSource>
+                <BitmapImage UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\blue_body_repeat.jpg"/>
+            </ImageBrush.ImageSource>
+        </ImageBrush>
+    </Window.Background>
+    
     <Grid x:Name="mainGrid" Background="#404040">
-        
         
         <!--APPLICATION FRAME-->
         <Frame x:Name="MainFrame"
                HorizontalContentAlignment="Stretch"
                NavigationUIVisibility="Hidden" 
-               VerticalContentAlignment="Stretch" 
-               Background="SlateGray"/>
+               VerticalContentAlignment="Stretch">
+            <Frame.Background>
+                <ImageBrush>
+                    <ImageBrush.ImageSource>
+                        <BitmapImage UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\blue_body_repeat.jpg"/>
+                    </ImageBrush.ImageSource>
+                </ImageBrush>
+            </Frame.Background>
+        </Frame>
     </Grid>
 
 </Window>

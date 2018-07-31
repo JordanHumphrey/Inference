@@ -5,6 +5,8 @@
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
 
+        <!--#region Styles -->
+        
         <Style x:Key="buttonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="#F1F1F1"/>
             <Setter Property="Background" Value="SlateGray"/>
@@ -28,9 +30,17 @@
         </Style>
 
         <Style x:Key="textBoxStyle" TargetType="TextBox">
-            <Setter Property="Foreground" Value="#F1F1F1"/>
-            <Setter Property="Background" Value="DeepSkyBlue"/>
-            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="AntiqueWhite"/>
+            <Setter Property="Background" Value="#326188"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BorderThickness" Value="2.5"/>
+        </Style>
+
+        <Style x:Key="passwordBoxStyle" TargetType="PasswordBox">
+            <Setter Property="Foreground" Value="AntiqueWhite"/>
+            <Setter Property="Background" Value="#326188"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BorderThickness" Value="2.5"/>
         </Style>
 
         <Style x:Key="ProjectFastClick_Button_Style" TargetType="Button">
@@ -74,7 +84,51 @@
             </Setter>
         </Style>
 
-        <BitmapImage x:Key="AccountImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\account.png"/>
+        <!--#endregion-->
+       
+        <!--#region Gradient Styles-->
+
+        <Style x:Key="TextBoxGradientBorder" TargetType="TextBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border>
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Color="SteelBlue" Offset="0"/>
+                                    <GradientStop Color="LightSteelBlue" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!--#endregion-->
+        
+        <!--#region Rounded Corners-->
+
+        <Style x:Key="RoundButtonTemplate" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="3" Background="{TemplateBinding Background}" 
+                                BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--#endregion-->
+        
+        <!--#region Images -->
+        
+        <BitmapImage x:Key="AccountImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\user.png"/>
         <BitmapImage x:Key="ProjectImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\project.png"/>
         <BitmapImage x:Key="ExploreImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\compass.png"/>
         <BitmapImage x:Key="HomeImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\homelogo.png"/>
@@ -83,7 +137,10 @@
         <BitmapImage x:Key="ExitImageSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\powerlogo.png"/>
         <BitmapImage x:Key="NewFolderSource" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\newfolderlogo.png"/>
         <BitmapImage x:Key="VerifiedImage" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\verified.png"/>
+        <BitmapImage x:Key="PageBackgroundImage" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\blue_body_repeat.jpg"/>
+        <BitmapImage x:Key="LogicImage" UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\logic.png"/>
 
-
+        <!--#endregion-->
+        
     </Application.Resources>
 </Application>

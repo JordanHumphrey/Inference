@@ -9,6 +9,8 @@ namespace Inference.ViewModel.LoginVM
 {
     public class LoginVM
     {
+        #region Attributes & Variables
+
         private User user;
 
         public User User
@@ -16,6 +18,8 @@ namespace Inference.ViewModel.LoginVM
             get { return user; }
             set { user = value; }
         }
+
+        #endregion Attributes & Variables
 
         #region Commands
 
@@ -25,12 +29,16 @@ namespace Inference.ViewModel.LoginVM
 
         #endregion Commands & EventHandlers
 
+        #region Constructors
+
         public LoginVM()
         {
             User = new User();
             LoginCommand = new LoginCommand(this);
             RegisterCommand = new RegisterCommand(this);
         }
+
+        #endregion Cosntructors
 
         #region Login & Register Account
 

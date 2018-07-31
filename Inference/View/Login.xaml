@@ -9,13 +9,20 @@
       xmlns:ucAC="clr-namespace:Inference.View.User_Controls"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Login">
+      Title="Login" >
 
     <Page.Resources>
         <LoginVM:LoginVM x:Key="login"/>
     </Page.Resources>
+    <!--<Page.Background>
+        <ImageBrush>
+            <ImageBrush.ImageSource>
+                <BitmapImage UriSource="C:\Users\jrdnh\Documents\Visual Studio 2017\Projects\Inference\Inference\Images\blue_body_repeat.jpg"/>
+            </ImageBrush.ImageSource>
+        </ImageBrush>
+    </Page.Background>-->
 
-    <Grid x:Name="StartScreenLogin" Background="#003366">
+    <Grid x:Name="StartScreenLogin">
         <Grid x:Name="LoginGrid" Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -25,287 +32,150 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="48*"/>
                 <RowDefinition Height="48*"/>
-                <RowDefinition Height="48*"/>
-                <RowDefinition Height="47*"/>
+                <RowDefinition Height="60*"/>
                 <RowDefinition Height="36*"/>
                 <RowDefinition Height="36*"/>
                 <RowDefinition Height="36*"/>
-                <RowDefinition Height="47*"/>
-                <RowDefinition Height="104*"/>
+                <RowDefinition Height="36*"/>
+                <RowDefinition Height="36*"/>
+                <RowDefinition Height="36*"/>
+                <RowDefinition Height="36*"/>
+                <RowDefinition Height="36*"/>
             </Grid.RowDefinitions>
 
             <TextBlock x:Name="LoginTitle_TextBlock"
-                   Text="Inference Manager"
-                   Foreground="WhiteSmoke"
+                   Text="Inference"
+                   Foreground="AntiqueWhite"
                    FontSize="24"
+                   FontWeight="DemiBold"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
+                   TextAlignment="Left"
                    Grid.Row="0"
                    Grid.Column="0" Margin="15,8,34,8" Width="218" Height="32"/>
 
-            <!--Account Verified PopUp (Natively Invisible)-->
-            <Border x:Name="AccntVerified_PopUp"
-                Margin="15" 
-                BorderThickness="1" 
-                BorderBrush="LimeGreen" 
-                CornerRadius="5"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                Grid.Row="1"
-                Grid.RowSpan="2"
-                Background="LimeGreen"
-                Visibility="Visible">
-                <Grid x:Name="VerificationNotification_Grid">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25*"/>
-                        <ColumnDefinition Width="103*"/>
-                        <ColumnDefinition Width="64*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-
-                    <Image Source="{StaticResource VerifiedImage}"
-                    Grid.Column="0"
-                    Margin="5,7,5,0"
-                    />
-                    <TextBlock x:Name="AccntVerified_TextBlock"
-                        Text="Account Verified"
-                        Foreground="WhiteSmoke"
-                        FontSize="18"
-                        FontWeight="DemiBold"
-                        Grid.Column="1"
-                        Margin="5,0,5,5"
-                        VerticalAlignment="Bottom" Height="24"/>
-                    <TextBlock x:Name="LastLogin_TextBlock"
-                        Text="Last Login :"
-                        Foreground="WhiteSmoke"
-                        FontSize="14"
-                        FontWeight="Normal"
-                        Grid.Column="1"
-                        Grid.Row="1"
-                        Margin="5,5,5,0"
-                        VerticalAlignment="Top" Height="24"/>
+            <Label Grid.Column="1"
+                   Grid.Row="1"
+                   Grid.RowSpan="8"
+                   HorizontalContentAlignment="Center">
+                <Label.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#052037" Offset="0"/>
+                        <GradientStop Color="#326188" Offset="1"/>
+                        <GradientStop Color="#052037" Offset="0"/>
+                    </LinearGradientBrush>
+                </Label.Background>
+                <Grid Background="#052037" 
+                      Margin="10"
+                      >
+                    <Border BorderBrush="Silver" BorderThickness="3"/>
+                    <Image Source="{StaticResource AccountImageSource}"                       
+                       Margin="15"
+                       Height="150"/>
                 </Grid>
-            </Border>
-
-            <TextBlock Text="UserName"
-                   Grid.Column="0"
-                   Grid.Row="3"
-                   Foreground="WhiteSmoke"
-                   FontSize="14"
-                   FontWeight="Normal"
-                   VerticalAlignment="Bottom"
-                   HorizontalAlignment="Left"
-                   Margin="15,0,0,5" Height="19"/>
-
+                
+            </Label>
+            
             <!--Email Entry TextBox-->
             <TextBox x:Name="AccntEmailLoginEntry_TextBox"
                  Text="{Binding User.Username, Mode=TwoWay}"
-                 Grid.Column="0"
-                 Grid.ColumnSpan="3"
-                 Grid.Row="4"
-                 Margin="15, 5, 15, 5"
-                 Background="#00ccff"
-                 Foreground="WhiteSmoke"
-                 BorderBrush="#00ccff"
-                 HorizontalContentAlignment="Left"
-                 VerticalContentAlignment="Center">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </TextBox.Resources>
+                 Grid.Column="1"
+                 Grid.Row="6"
+                 Margin="10,0,10,5"
+                 Style="{StaticResource textBoxStyle}"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 ToolTip="Account Name"
+                 >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="SteelBlue" Offset="0"/>
+                        <GradientStop Color="LightSteelBlue" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
             </TextBox>
-
-            <TextBlock Text="Password"
-                   Grid.Column="0"
-                   Grid.Row="5"
-                   Foreground="WhiteSmoke"
-                   FontSize="14"
-                   FontWeight="Normal"
-                   VerticalAlignment="Bottom"
-                   HorizontalAlignment="Left"
-                   Margin="15,0,0,5" Height="19" Width="58"/>
 
             <!--Password Entry TextBox-->
             <PasswordBox
-                 x:Name="AccntPasswordLoginEntry_TextBox"                 
-                 PasswordChar="•"
-                 Grid.Column="0"
-                 Grid.ColumnSpan="3"
-                 Grid.Row="6"
-                 Margin="15, 5, 15, 5"
-                 Background="#00ccff"
-                 Foreground="WhiteSmoke"
-                 HorizontalContentAlignment="Left"
-                 VerticalContentAlignment="Center"
-                 Style="{StaticResource roundcornerpassword}"/>
+                x:Name="AccntPasswordLoginEntry_TextBox"                 
+                PasswordChar="•"
+                Grid.Column="1"
+                Grid.Row="7"
+                Margin="10,0,10,5"
+                Style="{StaticResource passwordBoxStyle}"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                ToolTip="Account Password">
+                <PasswordBox.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="SteelBlue" Offset="0"/>
+                        <GradientStop Color="LightSteelBlue" Offset="1"/>
+                    </LinearGradientBrush>
+                </PasswordBox.BorderBrush>
+            </PasswordBox>
 
             <!--New Account Button-->
-            <Button x:Name="NewAccntBtn"
-                Click="NewAccntBtn_Click"
-                Grid.Row="7"
-                Grid.Column="0"
-                Margin="15,10,49,10"
-                Background="#00ccff"
-                BorderBrush="#00ccff"
-                HorizontalContentAlignment="Center">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
-                <TextBlock Text="Don't have an account? Click HERE!"
-                       Foreground="WhiteSmoke"
-                       Margin="5,0,5,0"/>
+            <Button x:Name="RegisterBtn"
+                Click="NewAccntBtn_Click"                
+                Style="{StaticResource RoundButtonTemplate}"
+                Content="Register"
+                Grid.Column="1"
+                Grid.Row="10"
+                Margin="90,8,90,8"
+                FontWeight="DemiBold"
+                Foreground="AntiqueWhite">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#052037" Offset="0"/>
+                        <GradientStop Color="#326188" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
             </Button>
 
-            <!--Total Users Stat-->
-            <Grid x:Name="UsersLogin_Grid"
-              Grid.Row="8"
-              Margin="15,15,15,49"
-              Background="#00ccff">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Label HorizontalAlignment="Stretch"
-                   VerticalAlignment="Stretch"
-                   BorderBrush="DarkSlateGray"
-                   BorderThickness="1,3,0,1"
-                   HorizontalContentAlignment="Center"
-                   VerticalContentAlignment="Center">
-                    <TextBlock Text="#"
-                       Grid.Column="1"
-                       FontSize="14"
-                       FontWeight="Normal"
-                       Foreground="WhiteSmoke"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
-                </Label>
-                <Label HorizontalAlignment="Stretch"
-                   VerticalAlignment="Stretch"
-                   BorderBrush="DarkSlateGray"
-                   BorderThickness="0,3,0,1"
-                   HorizontalContentAlignment="Center"
-                   VerticalContentAlignment="Center"
-                   Grid.Column="1">
-                    <TextBlock Text="&lt;Users&gt;"
-                       Grid.Column="1"
-                       FontSize="14"
-                       FontWeight="Normal"
-                       Foreground="WhiteSmoke"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
-                </Label>
-                <Label HorizontalAlignment="Stretch"
-                   VerticalAlignment="Stretch"
-                   BorderBrush="DarkSlateGray"
-                   BorderThickness="0,3,1,1"
-                   HorizontalContentAlignment="Center"
-                   VerticalContentAlignment="Center"
-                   Grid.Column="2">
-                    <TextBlock x:Name="TotalUsers_TextBlock"
-                       Text="65,565"
-                       Grid.Column="0"
-                       FontSize="14"
-                       Margin="5"
-                       FontWeight="Normal"
-                       Foreground="WhiteSmoke"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
-                </Label>
-            </Grid>
-
-            <!--Total Projects Stat-->
-            <Grid x:Name="ProjectsLogin_Grid"
-              Grid.Row="8"
-              Grid.Column="1"
-              Margin="15,15,15,49"
-              Background="#00ccff">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Label HorizontalAlignment="Stretch"
-                   VerticalAlignment="Stretch"
-                   BorderBrush="DarkSlateGray"
-                   BorderThickness="1,3,0,1"
-                   HorizontalContentAlignment="Center"
-                   VerticalContentAlignment="Center">
-                    <TextBlock Text="#"
-                       Grid.Column="1"
-                       FontSize="14"
-                       FontWeight="Normal"
-                       Foreground="WhiteSmoke"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
-                </Label>
-                <Label HorizontalAlignment="Stretch"
-                   VerticalAlignment="Stretch"
-                   BorderBrush="DarkSlateGray"
-                   BorderThickness="0,3,0,1"
-                   HorizontalContentAlignment="Center"
-                   VerticalContentAlignment="Center"
-                   Grid.Column="1">
-                    <TextBlock Text="&lt;Projects&gt;"
-                       Grid.Column="1"
-                       FontSize="14"
-                       FontWeight="Normal"
-                       Foreground="WhiteSmoke"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
-                </Label>
-                <Label HorizontalAlignment="Stretch"
-                   VerticalAlignment="Stretch"
-                   BorderBrush="DarkSlateGray"
-                   BorderThickness="0,3,1,1"
-                   HorizontalContentAlignment="Center"
-                   VerticalContentAlignment="Center"
-                   Grid.Column="2">
-                    <TextBlock x:Name="TotalProjects_TextBlock"
-                       Text="65,565"
-                       Grid.Column="0"
-                       FontSize="14"
-                       Margin="5"
-                       FontWeight="Normal"
-                       Foreground="WhiteSmoke"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
-                </Label>
-            </Grid>
+            <!--Login Help Button-->
+            <!--<Button x:Name="LoginHelpBtn"
+                Style="{StaticResource RoundButtonTemplate}"
+                Content="Login Help"
+                Grid.Column="1"
+                Grid.Row="9"
+                Margin="70,5,70,5"
+                FontWeight="DemiBold"
+                Foreground="AntiqueWhite"
+                Command="{Binding LoginCommand}"
+                CommandParameter="{Binding ElementName=This}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#052037" Offset="0"/>
+                        <GradientStop Color="#326188" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                
+            </Button>-->
 
             <!--Login Button-->
             <Button x:Name="LoginBtn"
+                Style="{StaticResource RoundButtonTemplate}"
                 Content="Login"
-                Grid.Column="2"
+                Grid.Column="1"
                 Grid.Row="8"
-                Margin="15,15,15,49"
-                Background="#00ccff"
+                Margin="90,8,90,8"
                 FontWeight="DemiBold"
-                Foreground="WhiteSmoke"
-                BorderBrush="WhiteSmoke"
+                Foreground="AntiqueWhite"
                 Command="{Binding LoginCommand}"
                 CommandParameter="{Binding ElementName=This}">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#052037" Offset="0"/>
+                        <GradientStop Color="#326188" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+
             </Button>
         </Grid>
-        <Grid Background="SlateGray" x:Name="newAccountGrid" Visibility="Collapsed">
+
+        <Grid Background="Transparent" x:Name="newAccountGrid" Visibility="Collapsed">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
@@ -321,64 +191,54 @@
                 <RowDefinition Height="36*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="LoginTitle_Block"
-                   Text="New Inference Account"
-                   Foreground="WhiteSmoke"
+            <TextBlock
+                   Text="Inference"
+                   Foreground="AntiqueWhite"
                    FontSize="24"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Left"
-                   Grid.Row="0"
-                   Grid.Column="0" Margin="15,12,0,12" Height="32" Width="246"/>
-
-            <TextBlock Text="Share and Develop Projects, Track Issues, Assign Tasks &#10;                          Inference makes it Easy"
-                   Grid.Column="0"
-                   Grid.ColumnSpan="2"
-                   Grid.Row="1"
-                   Foreground="WhiteSmoke"
-                   FontSize="14"
-                   FontWeight="Normal"
+                   FontWeight="DemiBold"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
-                   
-                   />
+                   TextAlignment="Left"
+                   Grid.Row="0"
+                   Grid.Column="0" Margin="15,8,34,8" Width="218" Height="32"/>
 
-            <TextBlock Text="First Name"
-                   Grid.Column="0"
-                   Grid.Row="2"
-                   Foreground="WhiteSmoke"
-                   FontSize="14"
-                   FontWeight="Normal"
-                   VerticalAlignment="Bottom"
-                   HorizontalAlignment="Left"
-                   Margin="15,0,0,5" Height="19" Width="67"/>
+            <Label Grid.Column="1"
+                   Grid.Row="1"
+                   Grid.RowSpan="7"
+                   HorizontalContentAlignment="Center">
+                <Label.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#052037" Offset="0"/>
+                        <GradientStop Color="#326188" Offset="1"/>
+                        <GradientStop Color="#052037" Offset="0"/>
+                    </LinearGradientBrush>
+                </Label.Background>
+                <TextBlock Text="New Account"
+                   Foreground="AntiqueWhite"
+                   FontSize="24"
+                   FontWeight="DemiBold"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                           />
+            </Label>
 
             <!--First Name Entry Box-->
             <TextBox x:Name="FirstNameEntry_TextBox"
                  Text="{Binding User.Name, Mode=TwoWay}"
-                 Grid.Column="0"
-                 Grid.Row="3"
+                 Grid.Column="1"
+                 Grid.Row="2"
                  Margin="15,5,15,5"
-                 BorderBrush="WhiteSmoke"
-                 Background="SlateGray"
-                 Foreground="WhiteSmoke"
+                 Style="{StaticResource textBoxStyle}"
+                 ToolTip="First Name"
                  HorizontalContentAlignment="Left"
                  VerticalContentAlignment="Center">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </TextBox.Resources>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="SteelBlue" Offset="0"/>
+                        <GradientStop Color="LightSteelBlue" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
             </TextBox>
-
-            <TextBlock Text="Last Name"
-                   Grid.Column="1"
-                   Grid.Row="2"
-                   Foreground="WhiteSmoke"
-                   FontSize="14"
-                   FontWeight="Normal"
-                   VerticalAlignment="Bottom"
-                   HorizontalAlignment="Left"
-                   Margin="15,0,0,5" Height="19" Width="65"/>
 
             <!--Last Name Entry Box-->
             <TextBox x:Name="LastNameEntry_TextBox"
@@ -386,55 +246,35 @@
                  Grid.Column="1"
                  Grid.Row="3"
                  Margin="15,5,15,5"
-                 BorderBrush="WhiteSmoke"
-                 Background="SlateGray"
-                 Foreground="WhiteSmoke"
+                 Style="{StaticResource textBoxStyle}"
+                 ToolTip="Last Name"
                  HorizontalContentAlignment="Left"
                  VerticalContentAlignment="Center">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </TextBox.Resources>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="SteelBlue" Offset="0"/>
+                        <GradientStop Color="LightSteelBlue" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
             </TextBox>
-
-            <TextBlock Text="User Name"
-                   Grid.Column="0"
-                   Grid.Row="4"
-                   Foreground="WhiteSmoke"
-                   FontSize="14"
-                   FontWeight="Normal"
-                   VerticalAlignment="Bottom"
-                   HorizontalAlignment="Left"
-                   Margin="15,0,0,5" Height="19" Width="69"/>
 
             <!--UserName Entry Box-->
             <TextBox x:Name="UserNameEntry_TextBox"
                  Text="{Binding User.Username, Mode=TwoWay}"
-                 Grid.Column="0"
-                 Grid.Row="5"
+                 Grid.Column="1"
+                 Grid.Row="4"
                  Margin="15,5,15,5"
-                 BorderBrush="WhiteSmoke"
-                 Background="SlateGray"
-                 Foreground="WhiteSmoke"
+                 Style="{StaticResource textBoxStyle}"
+                 ToolTip="User Name"
                  HorizontalContentAlignment="Left"
                  VerticalContentAlignment="Center">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </TextBox.Resources>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="SteelBlue" Offset="0"/>
+                        <GradientStop Color="LightSteelBlue" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
             </TextBox>
-
-            <TextBlock Text="Password"
-                   Grid.Column="1"
-                   Grid.Row="4"
-                   Foreground="WhiteSmoke"
-                   FontSize="14"
-                   FontWeight="Normal"
-                   VerticalAlignment="Bottom"
-                   HorizontalAlignment="Left"
-                   Margin="15,0,0,5" Height="19" Width="58"/>
 
             <!--Password Entry Box-->
             <TextBox x:Name="PasswordNameEntry_TextBox"
@@ -442,44 +282,34 @@
                  Grid.Column="1"
                  Grid.Row="5"
                  Margin="15,5,15,5"
-                 BorderBrush="WhiteSmoke"
-                 Background="SlateGray"
-                 Foreground="WhiteSmoke"
+                 Style="{StaticResource textBoxStyle}"
                  HorizontalContentAlignment="Left"
-                 VerticalContentAlignment="Center">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </TextBox.Resources>
+                 VerticalContentAlignment="Center"
+                 ToolTip="Password">
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="SteelBlue" Offset="0"/>
+                        <GradientStop Color="LightSteelBlue" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
             </TextBox>
-
-            <TextBlock Text="Email"
-                   Grid.Column="0"
-                   Grid.Row="6"
-                   Foreground="WhiteSmoke"
-                   FontSize="14"
-                   FontWeight="Normal"
-                   VerticalAlignment="Bottom"
-                   HorizontalAlignment="Left"
-                   Margin="15,0,0,5" Height="19" Width="33"/>
 
             <!--Email Entry Box-->
             <TextBox x:Name="EmailNameEntry_TextBox"
                  Text="{Binding User.Email, Mode=TwoWay}"
-                 Grid.Column="0"
-                 Grid.Row="7"
+                 Grid.Column="1"
+                 Grid.Row="6"
                  Margin="15,5,15,5"
-                 BorderBrush="WhiteSmoke"
-                 Background="SlateGray"
-                 Foreground="WhiteSmoke"
+                 Style="{StaticResource textBoxStyle}"
+                 ToolTip="Email"
                  HorizontalContentAlignment="Left"
                  VerticalContentAlignment="Center">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </TextBox.Resources>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="SteelBlue" Offset="0"/>
+                        <GradientStop Color="LightSteelBlue" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
             </TextBox>
 
             <!--Create Account Button-->
@@ -489,37 +319,37 @@
                 Content="Create Account"
                 Grid.Column="1"
                 Grid.Row="7"
-                Margin="15,5,15,5"
-                Background="SlateBlue"
+                Margin="80,8,80,8"
                 FontWeight="DemiBold"
-                Foreground="WhiteSmoke"
-                BorderBrush="WhiteSmoke"
+                Foreground="AntiqueWhite"
+                BorderBrush="AntiqueWhite"
+                Style="{StaticResource RoundButtonTemplate}"
                 >
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#052037" Offset="0"/>
+                        <GradientStop Color="#326188" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
             </Button>
 
             <!--Remembered Account Button-->
             <Button x:Name="RememberedAccntBtn"
-                    Click="RememberedAccntBtn_Click"
-                    Grid.Row="8"
-                    Grid.Column="0"
-                    Margin="15,10,49,10"
-                    Background="SlateGray"
-                    BorderBrush="SlateGray"
-                    HorizontalContentAlignment="Left">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="5"/>
-                        </Style>
-                    </Button.Resources>
-                <TextBlock 
-                    Text="Remembered Your Account? Click Here!"
-                    Foreground="HotPink"
-                    Margin="5,0,5,0"/>
+                Click="RememberedAccntBtn_Click"
+                Content="Back"
+                Grid.Row="8"
+                Grid.Column="1"
+                Margin="80,8,80,8"
+                FontWeight="DemiBold"
+                Foreground="AntiqueWhite"
+                BorderBrush="AntiqueWhite"
+                Style="{StaticResource RoundButtonTemplate}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#052037" Offset="0"/>
+                        <GradientStop Color="#326188" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
             </Button>
 
         </Grid>
